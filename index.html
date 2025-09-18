@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Modification Business</title>
+  <meta name="description" content="Expert bike modification services: upgrades, custom paint jobs, frame repairs, and more. Explore our financial plan and interactive break-even calculator.">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+    
+    section {
+      position: relative;
+      min-height: 100vh;
+      padding: 80px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .video-section video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      max-width: 900px;
+    }
+
+    /* Collapsible sections */
+    .collapsible {
+      background: #007BFF;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .collapsible:hover { background: #0056b3; }
+    .content {
+      display: none;
+      padding: 15px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      text-align: left;
+      color: #333;
+    }
+
+    /* Calculator */
+    .calculator {
+      background: rgb(36, 30, 30);
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .calculator input {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .calculator button {
+      width: 100%;
+      padding: 10px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .calculator button:hover { background: #0056b3; }
+    #chart-container {
+      max-width: 600px;
+      margin: 30px auto;
+      height: 400px;
+      background: white;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="tablink" href="#home">Home</a>
+    <a class="tablink" href="#about">About</a>
+    <a class="tablink" href="#financial">Financial Plan</a>
+    <a class="tablink" href="#calculator">Calculator</a>
+    <a class="tablink" href="#contact">Contact</a>
+  </nav>
+
+  <!-- Home -->
+  <section id="home" class="video-section" style="display: flex;">
+    <video autoplay muted loop playsinline>
+      <source src="3836915847-preview.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <h1>Welcome to Our Bike Modification Business</h1>
+      <p>Transform your motorcycle into a unique masterpiece with our expert customization services. From upgrades and custom paint jobs to frame repairs and accessory installations, we help you ride in style. Explore our financial plan and break-even analysis to understand the business's viability, or use our interactive calculator to estimate your own break-even point.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="video-section" style="display: none;">
+    <video autoplay muted loop playsinline>
+      <source src="3836915847-preview.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <h2>About Us</h2>
+      <p>We are passionate about creating personalized motorcycles that reflect your style and performance needs. Our team of skilled mechanics and designers ensures top-quality modifications for every rider.</p>
+      <p><strong>Our Location</strong><br>789 Code Lane, Dream City, DC 67890</p>
+      <p><strong>Contact Information</strong><br>Phone: (555) 678-9012<br>Email: support@dreambike.tech</p>
+    </div>
+  </section>
+
+  <!-- Financial Plan -->
+  <section id="financial" class="video-section" style="display: none;">
+    <video autoplay muted loop playsinline>
+      <source src="3836915847-preview.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <h2>Financial Plan</h2>
+
+      <button class="collapsible">Overview</button>
+      <div class="content">
+        <p>A bike modification business (customizing motorcycles, e.g., upgrades, painting, frame repairs, or accessory installations) requires a solid financial plan to ensure viability. This plan outlines startup costs, ongoing expenses, revenue streams, and projections to secure funding, manage cash flow, and achieve profitability.</p>
+        <p>The financial plan includes:</p>
+        <ul>
+          <li>Startup Costs: One-time expenses to launch.</li>
+          <li>Ongoing Expenses: Fixed and variable costs.</li>
+          <li>Revenue Projections: Expected income from services.</li>
+          <li>Key Financial Statements: Profit and loss (P&L), cash flow, and balance sheet.</li>
+          <li>Break-Even Analysis: The point where revenues cover costs.</li>
+        </ul>
+      </div>
+
+      <button class="collapsible">Theory</button>
+      <div class="content">
+        <p>What is a Financial Plan?</p>
+        <p>A financial plan is an estimate of revenue, expenses, capital requirements, and profitability for a business over time. It includes:</p>
+        <ul>
+          <li>Startup Cost</li>
+          <li>Fixed and Variable Costs</li>
+          <li>Revenue Projections</li>
+          <li>Profit & Loss Forecast</li>
+          <li>Break-even Point</li>
+        </ul>
+        <p>What is Break-even Analysis?</p>
+        <p>Break-even analysis determines the minimum sales volume to cover all costs (profit = 0). Formula:</p>
+        <p>Break-even Point (Units) = Fixed Costs / (Selling Price per Unit - Variable Cost per Unit)</p>
+      </div>
+
+      <button class="collapsible">Step 1: Estimate Startup Costs</button>
+      <div class="content">
+        <table>
+          <tr><th>Category</th><th>Estimated Cost Range</th><th>Details/Notes</th></tr>
+          <tr><td>Lease/Space Setup</td><td>$5,000 - $15,000</td><td>Security deposit, first month's rent, basic renovations.</td></tr>
+          <tr><td>Equipment & Tools</td><td>$10,000 - $25,000</td><td>Bike repair stands, workbench/tools, painting booth, POS system.</td></tr>
+          <tr><td>Initial Inventory</td><td>$5,000 - $15,000</td><td>Parts and supplies (tires, chains, paints, decals).</td></tr>
+          <tr><td>Marketing & Branding</td><td>$1,000 - $5,000</td><td>Website, social media ads, business cards.</td></tr>
+          <tr><td>Legal & Permits</td><td>$1,000 - $3,000</td><td>Business registration, liability insurance, permits.</td></tr>
+          <tr><td>Professional Services</td><td>$1,500 - $4,000</td><td>Lawyer, accountant setup.</td></tr>
+          <tr><td>Emergency Fund</td><td>$5,000 - $10,000</td><td>3 months of operating costs.</td></tr>
+          <tr><td>Total Startup Costs</td><td>$28,500 - $77,000</td><td>Varies by location; rural: $20,000-$40,000; urban: $40,000-$80,000.</td></tr>
+        </table>
+      </div>
+
+      <button class="collapsible">Step 2: Outline Ongoing Expenses</button>
+      <div class="content">
+        <p>Fixed Costs (Monthly, ~$4,000-$8,000):</p>
+        <ul>
+          <li>Rent/Utilities: $1,500-$3,000</li>
+          <li>Insurance: $100-$250</li>
+          <li>Salaries: $3,000-$5,000 (plus taxes/benefits)</li>
+          <li>Marketing: $200-$500</li>
+          <li>Software/Supplies: $100-$300</li>
+        </ul>
+        <p>Variable Costs (Per Job, ~40-60% of revenue):</p>
+        <ul>
+          <li>Parts/Materials: $50-$150 per modification</li>
+          <li>Labor (outsourced): $20-$50/hour</li>
+          <li>Shipping/Supplies: 5-10% of job cost</li>
+        </ul>
+      </div>
+
+      <button class="collapsible">Step 3: Project Revenues</button>
+      <div class="content">
+        <p>Revenue Streams:</p>
+        <ul>
+          <li>Modification Services: $150-$500/job</li>
+          <li>Add-Ons: Accessories (10-20% of revenue)</li>
+          <li>Potential: Rentals, partnerships</li>
+        </ul>
+        <p>First Year Projections:</p>
+        <ul>
+          <li>Monthly Jobs: 30 at $250 = $7,500/month</li>
+          <li>Annual Revenue: $90,000</li>
+          <li>Growth: Year 2: $120,000; Year 3: $150,000</li>
+          <li>Gross Margin: 40-60%</li>
+        </ul>
+      </div>
+
+      <button class="collapsible">Step 4: Prepare Key Financial Statements</button>
+      <div class="content">
+        <p>Profit & Loss (P&L):</p>
+        <ul>
+          <li>Year 1 Monthly Average: Revenue $7,500; COGS $3,750; Expenses $5,000; Net Loss -$1,250 (breakeven by month 6-12)</li>
+        </ul>
+        <p>Cash Flow:</p>
+        <ul>
+          <li>Inflows: Sales, loans</li>
+          <li>Outflows: Expenses, inventory</li>
+          <li>Tip: Positive cash flow in 6-12 months; $10,000-$20,000 buffer</li>
+        </ul>
+        <p>Balance Sheet:</p>
+        <ul>
+          <li>Assets: $50,000; Liabilities: $20,000; Equity: $30,000</li>
+        </ul>
+      </div>
+
+      <button class="collapsible">Break-even Analysis</button>
+      <div class="content">
+        <p>Formula: Break-Even Point (Units) = Fixed Costs / (Price per Job - Variable Cost per Job)</p>
+        <p>Example:</p>
+        <ul>
+          <li>Fixed Costs: $5,000/month</li>
+          <li>Job Price: $250</li>
+          <li>Variable Cost: $100</li>
+          <li>Contribution Margin: $150</li>
+          <li>Break-Even: 33 jobs ($8,250 revenue)</li>
+        </ul>
+        <table>
+          <tr><th>Month</th><th>Units Sold</th><th>Revenue ($)</th><th>Total Cost ($)</th><th>Profit ($)</th></tr>
+          <tr><td>1</td><td>15</td><td>3,750</td><td>6,500</td><td>-2,750</td></tr>
+          <tr><td>2</td><td>25</td><td>6,250</td><td>7,500</td><td>-1,250</td></tr>
+          <tr><td>3</td><td>34</td><td>8,500</td><td>8,400</td><td>100</td></tr>
+          <tr><td>4</td><td>50</td><td>12,500</td><td>10,000</td><td>2,500</td></tr>
+        </table>
+      </div>
+
+      <button class="collapsible">Conclusion</button>
+      <div class="content">
+        <p>The business needs 40 jobs/month to cover costs. Growth beyond this ensures profitability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section id="calculator" class="video-section" style="display: none;">
+    <video autoplay muted loop playsinline>
+      <source src="3836915847-preview.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <h2>Break-Even Calculator</h2>
+      <div class="calculator">
+        <label>Fixed Costs ($): <input type="number" id="fixedCosts" value="5000"></label>
+        <small>e.g., rent, salaries</small>
+        <label>Job Price ($): <input type="number" id="jobPrice" value="250"></label>
+        <small>e.g., average modification fee</small>
+        <label>Variable Cost ($): <input type="number" id="variableCost" value="100"></label>
+        <small>e.g., materials, outsourced labor</small>
+        <button onclick="calculateBreakEven()">Calculate</button>
+        <p id="result"></p>
+      </div>
+      <div id="chart-container">
+        <canvas id="breakEvenChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="video-section" style="display: none;">
+    <video autoplay muted loop playsinline>
+      <source src="3836915847-preview.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <h2>Contact Us</h2>
+      <p>Reach out for inquiries or to start your bike modification journey!</p>
+      <p><strong>Address:</strong> 789 Code Lane, Dream City, DC 67890</p>
+      <p><strong>Phone:</strong> (555) 678-9012</p>
+      <p><strong>Email:</strong> support@dreambike.tech</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bike Modification Business</p>
+  </footer>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll(".tablink").forEach(link => {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const tabName = this.getAttribute("href").substring(1);
+        document.querySelectorAll("section").forEach(sec => {
+          sec.style.display = "none";
+        });
+        const targetSec = document.getElementById(tabName);
+        targetSec.style.display = "flex";
+      });
+    });
+
+    // Collapsible sections
+    document.querySelectorAll(".collapsible").forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+
+    // Calculator + Chart
+    const ctx = document.getElementById('breakEvenChart').getContext('2d');
+    let chart = new Chart(ctx, {
+      type: 'line',
+      data: { labels: [], datasets: [] },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { title: { display: true, text: 'Jobs per Month' } },
+          y: { title: { display: true, text: 'Dollars ($)' }, beginAtZero: true }
+        }
+      }
+    });
+
+    function calculateBreakEven() {
+      const fixed = parseFloat(document.getElementById('fixedCosts').value);
+      const price = parseFloat(document.getElementById('jobPrice').value);
+      const variable = parseFloat(document.getElementById('variableCost').value);
+
+      if (isNaN(fixed) || isNaN(price) || isNaN(variable) || price <= variable) {
+        document.getElementById('result').innerText = "Enter valid numbers.";
+        return;
+      }
+
+      const margin = price - variable;
+      const breakEvenUnits = Math.ceil(fixed / margin);
+      const breakEvenRevenue = breakEvenUnits * price;
+
+      document.getElementById('result').innerText = 
+        `Break-Even: ${breakEvenUnits} jobs/month ($${breakEvenRevenue}/month)`;
+
+      const maxUnits = breakEvenUnits * 2;
+      const labels = Array.from({length:maxUnits+1},(_,i)=>i);
+      const revenue = labels.map(u=>u*price);
+      const cost = labels.map(u=>fixed+u*variable);
+
+      chart.data.labels = labels;
+      chart.data.datasets = [
+        { label:"Revenue", data:revenue, borderColor:"#007BFF", fill:false },
+        { label:"Total Cost", data:cost, borderColor:"red", fill:false }
+      ];
+      chart.update();
+    }
+
+    // Init chart
+    calculateBreakEven();
+  </script>
+</body>
+</html>
